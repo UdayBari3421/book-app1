@@ -95,12 +95,18 @@ input:focus {
 
 .card {
   display: flex;
-  border: 1px solid cyan;
+  border: 3px solid cyan;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .card img {
   width: 250px;
   height: 350px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .box {
@@ -109,6 +115,9 @@ input:focus {
   margin: 30px auto;
   width: 700px;
   height: 200px;
+  border-end-end-radius: 70px;
+  border-start-end-radius: 70px;
+  border: 5px solid #4e4c4c;
 }
 
 .right {
@@ -117,7 +126,7 @@ input:focus {
   justify-content: space-between;
   padding: 30px;
   gap: 12px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .left {
@@ -131,4 +140,12 @@ input:focus {
   box-shadow: 3px 5px 0px white;
   scale: 1.2;
   transform: rotate(-3.5deg);
+}
+
+@media only screen and (max-width: 768px) {
+
+  nav div:last-child,
+  nav div:first-child {
+    display: none;
+  }
 }
