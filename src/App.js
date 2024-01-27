@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import ShowData from "./Components/ShowData";
+import RenderSelected from "./Components/RenderSelected";
 
-function App() {
+const App = () => {
+  const [apiData, setApiData] = useState([]);
+  const [value, setValue] = useState("");
+  const [selected, setSelected] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar
+        setValue={setValue}
+        setSelected={setSelected}
+        value={value}
+        setApiData={setApiData}
+      />
+      <RenderSelected selected={selected} />
+      <ShowData
+        apiData={apiData}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   );
-}
+};
 
 export default App;
