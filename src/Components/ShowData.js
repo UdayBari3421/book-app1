@@ -3,8 +3,9 @@ import React from "react";
 const ShowData = ({ apiData, setSelected }) => {
   return (
     <div className="card-container">
-      {apiData &&
+      {apiData.length > 0 &&
         apiData.map((item, index) => {
+          console.log(apiData.length);
           return (
             <div
               onClick={() => setSelected(item)}
@@ -12,7 +13,7 @@ const ShowData = ({ apiData, setSelected }) => {
               key={item.kind + index}
             >
               <div>
-                {item.volumeInfo.imageLinks.thumbnail && (
+                {item && item.volumeInfo.imageLinks.thumbnail && (
                   <img src={item.volumeInfo.imageLinks.thumbnail} alt="" />
                 )}
               </div>

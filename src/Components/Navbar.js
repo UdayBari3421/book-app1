@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React from "react";
 import logo from "../images/logo.svg";
 import bell from "../images/bell.svg";
 import person from "../images/person.svg";
@@ -26,9 +27,9 @@ const Navbar = ({ setApiData, value, setValue, setSelected }) => {
       });
   }
 
-  useEffect(() => {
-    handleSubmit();
-  }, []);
+  // useEffect(() => {
+  //   handleSubmit();
+  // }, []);
 
   return (
     <nav className="nav">
